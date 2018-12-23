@@ -42,18 +42,22 @@ void printSteps(list<string> steps){
 	cout << endl;
 }
  
-int main(){	
+int main(int argc, char** argv){	
 	string filename, choice;
 	char input, stackTop;
 	int state = 1;
 
-	cout << "\nM = (K, T, V, p, k1, $, {k2})\nK = {k1, k2}\nT = {\")\",\")\", ε}\nV = {A, $}\n\n";
+	cout << "\nM = (K, T, V, p, k1, $, {k2})\nK = {k1, k2}\nT = {\")\",\")\", ε}\nV = {A, $}\n";
 	
-	cout << "Insert filename: ";
-	cin >> filename;
+	if(argc == 1){
+		cout << "\nInsert filename: ";
+		cin >> filename;
+	}
+	else{
+		filename = argv[1];
+	}
 	
 	ifstream file(filename);
-
 
 	stack<char>* s = new stack<char>();
 	list<char>* symbols = new list<char>();
