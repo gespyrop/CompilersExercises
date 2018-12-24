@@ -15,13 +15,13 @@ string factor(int tabs){
 
 	switch(r){
 		case 0:
-			cout << "<factor> --> a" << endl;// << endl;
+			cout << "<factor> --> a" << endl;
 			return "a";
 		case 1:
-			cout << "<factor> --> b" << endl;// << endl;
+			cout << "<factor> --> b" << endl;
 			return "b";
 		default:
-			cout << "<factor> -->c" << endl;// << endl;
+			cout << "<factor> -->c" << endl;
 			return "c";
 	}
 }
