@@ -12,6 +12,7 @@ tetragwno [tT]etrag[ow]no|TETRAG[OW]NO
 [a-eA-E]{2}
 [a-eA-E]{3,4} {printf("\n%s : einai onoma gewmetrikhs ontothtas\n", yytext);}
 [a-eA-E]{5}
+[ \t\n]+
 .
 %%
 main() {
