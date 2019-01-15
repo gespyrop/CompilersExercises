@@ -26,7 +26,7 @@ void printStack(stack<string> stack){
 
 int main(){
 
-  //Leksika gia ta termatika kai ta mi termatika symbola
+  //Λεξικά για τα τερματικά και τα μη τερματικά σύμβολα
 
   map<string,int> non_terminal = {{"S",0},{"A",1},{"B",2},{"E",3}};
   map<string,int> terminal = {{"[",0},{"]",1},{":",2},{"+",3},{"x",4},{"y",5}};
@@ -40,13 +40,13 @@ int main(){
   M[0][0] ="[A]"; M[1][0] ="BE"; M[1][4] ="BE"; M[1][5] ="BE"; M[2][0] ="S";
   M[2][4] ="x"; M[2][5] ="y"; M[3][1] ="ε"; M[3][2] =":A"; M[3][3] ="+A";
 
-  //Dimiourgia tis stoivas
+  //Δημιουργία της στοίβας
 
   stack<string> stack;
   stack.push("$");
   stack.push("S");
 
-  //Anagnwsei leksis apo ton xrhsth
+  //Ανάγνωση λέξης απο τον χρήστη
 
   cout<<"Give a word."<<endl;
   string word;
@@ -55,21 +55,21 @@ int main(){
   word =word + "$";
   cout<<endl;
 
-  //O syntaktikos elegxos
+  //Συντακτικός έλεγχος
 
   string production;
   string firstLetter;
   while(stack.top() != "$"){
     firstLetter = word[0];
 
-      //Elegxei an to symbolo einai termatiko
+      //Ελέγχει αν το σύμβολο είναι τερματικό
       if(terminal.count(stack.top())){
         if(stack.top() == firstLetter){
           stack.pop();
           word = word.substr(1);
         }else{break;}
 
-      //An den einai termatiko tote
+      //Αν δεν είναι τερματικό τότε
       }else{
         production = M[non_terminal[stack.top()]][terminal[firstLetter]];
         if(production == "fail"){
@@ -86,7 +86,7 @@ int main(){
     cout<<endl;
   }
 
-  //To apotelesma
+  //Το αποτέλεσμα
 
   if(stack.top() == word){
     cout<<"The word "<<originalWord<<" was parsed successfully."<<endl;
