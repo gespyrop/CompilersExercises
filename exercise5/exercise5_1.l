@@ -1,9 +1,9 @@
 %{
 %}
+dinetai [dD]inet(ai|e)|DINET(AI|E)
 gwnia [gG][ow]nia|G[OW]NIA
 trigwno [tT]rig[ow]no|TRIG[OW]NO
 tetragwno [tT]etrag[ow]no|TETRAG[OW]NO
-dinetai [dD]inet(ai|e)|DINET(AI|E)
 %%
 ^{dinetai}[ \t]*$ {printf("\nSfalma! Den dwthike gewmetrikh ontothta kai onoma gewmetrikhs ontothtas: %s\n\n", yytext);}
 ^{dinetai}[ \t]*({gwnia}|{trigwno}|{tetragwno})[ \t]*$ {printf("\nSfalma! Den dwthike onoma gewmetrikhs ontothtas : %s\n\n", yytext);}
