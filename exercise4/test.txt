@@ -1,0 +1,13 @@
+o : real;
+
+var x:integer;
+
+y : real;
+
+an integer;
+
+x real
+
+var z : BOOLEAN;b:BOOL;		s :char;
+
+var h : REAL
