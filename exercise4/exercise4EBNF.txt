@@ -1,6 +1,7 @@
 ii. EBNF expression
 letter = "A"|"B"|...|"Z"|"a"|"b"|...|"z".
 digit = "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9".
-name = letter,{digit|letter|"_"}.
+name = letter{digit,"_"}.
 type = "integer"|"real"|"boolean"|"char".
-declaration = "var",name,{","name},":",type,";".     
+variable = name,{",",name},":",type,";".
+declaration = "var",variable{variable}.
